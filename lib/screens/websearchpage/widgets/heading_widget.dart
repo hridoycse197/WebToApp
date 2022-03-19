@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:webtoappnew/utils/colors/appcolor.dart';
+import 'package:webtoappnew/widgets/text_widget.dart';
 
 class HeadingWidget extends StatelessWidget {
   const HeadingWidget({
@@ -15,19 +17,20 @@ class HeadingWidget extends StatelessWidget {
       width: double.infinity,
       decoration: BoxDecoration(
         color: AppColor.thirdpagebackcolor,
-        border: Border.all(color: AppColor.mainColor, width: 1),
+        border: Border.all(
+          color: AppColor.mainColor,
+          width: MediaQuery.of(context).size.height * 0.002,
+        ),
       ),
       child: Padding(
-        padding: EdgeInsets.only(
-          left: MediaQuery.of(context).size.width * 0.05,
-        ),
-        child: Text(
-          'Try Demo',
-          textAlign: TextAlign.left,
-          style: GoogleFonts.raleway(
-              color: AppColor.white, fontSize: 24, fontWeight: FontWeight.w600),
-        ),
-      ),
+          padding: EdgeInsets.only(
+            left: MediaQuery.of(context).size.width * 0.05,
+          ),
+          child: TextWidget(
+              text: 'Try Demo',
+              color: AppColor.white,
+              fontWeight: FontWeight.w600,
+              fontsize: 24.sp)),
     );
   }
 }

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:webtoappnew/utils/colors/appcolor.dart';
+import 'package:webtoappnew/widgets/text_widget.dart';
 
 class FixedSiteTitleWidget extends StatelessWidget {
   const FixedSiteTitleWidget({
@@ -10,14 +12,13 @@ class FixedSiteTitleWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(left: 18),
-      width: double.infinity,
-      child: Text(
-        'Check This out',
-        textAlign: TextAlign.left,
-        style: GoogleFonts.raleway(
-            fontSize: 24, fontWeight: FontWeight.w600, color: AppColor.white),
-      ),
-    );
+        padding:
+            EdgeInsets.only(left: MediaQuery.of(context).size.width * 0.06),
+        width: double.infinity,
+        child: TextWidget(
+            text: 'Check This out',
+            color: AppColor.white,
+            fontWeight: FontWeight.w600,
+            fontsize: 24.sp));
   }
 }

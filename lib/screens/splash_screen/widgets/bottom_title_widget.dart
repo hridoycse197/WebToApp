@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../../utils/colors/appcolor.dart';
@@ -11,7 +12,7 @@ class BottomTextWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.of(context).size.width - 40,
+      width: MediaQuery.of(context).size.width - 40.w,
       height: 80,
       child: Text.rich(
         TextSpan(

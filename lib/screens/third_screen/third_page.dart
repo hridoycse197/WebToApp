@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:webtoappnew/screens/third_screen/widgets/subtitle_widget.dart';
-import 'package:webtoappnew/screens/third_screen/widgets/title_widget.dart';
 import 'package:webtoappnew/utils/colors/appcolor.dart';
 
 import 'package:webtoappnew/widgets/appbar_widget.dart';
+import 'package:webtoappnew/widgets/text_widget.dart';
 
 import 'widgets/grid_widget.dart';
 import 'widgets/service_title.dart';
@@ -33,29 +33,36 @@ class ThirdPage extends StatelessWidget {
         child: Column(
           children: [
             //title
-            TitleWidget(),
+            TextWidget(
+                text: 'Support',
+                color: AppColor.mainColor,
+                fontWeight: FontWeight.w700,
+                fontsize: 24.sp),
 
             //space
-            const SizedBox(
-              height: 3,
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.01,
             ),
             //subtitle
-            SubTitleWidget(),
+            TextWidget(
+                text: 'Any Type Of Content',
+                color: AppColor.white,
+                fontWeight: FontWeight.w700,
+                fontsize: 16.sp),
             //space
-            SizedBox(
-              height: 3,
-            ),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.009),
             //devider
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 105),
+            Padding(
+              padding: EdgeInsets.symmetric(
+                  horizontal: MediaQuery.of(context).size.height * 0.129),
               child: Divider(
-                height: 3,
-                thickness: 3,
+                height: MediaQuery.of(context).size.height * 0.002,
+                thickness: MediaQuery.of(context).size.height * 0.004,
                 color: AppColor.thirdpagebackcolor,
               ),
             ),
-            const SizedBox(
-              height: 21,
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.030,
             ),
             const ServiceTitle(),
             GridWidget(service_name: service_name),

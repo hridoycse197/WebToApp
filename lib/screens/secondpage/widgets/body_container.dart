@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:webtoappnew/utils/colors/appcolor.dart';
+import 'package:webtoappnew/widgets/text_widget.dart';
 
 class BodyContainer extends StatelessWidget {
   String imagelink;
@@ -22,14 +24,14 @@ class BodyContainer extends StatelessWidget {
         Get.to(page, transition: Transition.zoom);
       },
       child: Container(
-        height: 165,
+        height: MediaQuery.of(context).size.height * 0.20,
         width: MediaQuery.of(context).size.width - 70,
         decoration: BoxDecoration(
             color: AppColor.thirdpagebackcolor,
             border: Border.all(
               color: AppColor.mainColor,
             ),
-            borderRadius: BorderRadius.circular(13)),
+            borderRadius: BorderRadius.circular(13.r)),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
@@ -38,15 +40,14 @@ class BodyContainer extends StatelessWidget {
               image: AssetImage(imagelink),
             ),
             SizedBox(
-              height: 15,
+              height: MediaQuery.of(context).size.height * 0.02,
             ),
-            Text(
-              title,
-              style: GoogleFonts.raleway(
-                  color: AppColor.white,
-                  fontSize: 16,
-                  fontWeight: FontWeight.w600),
-            ),
+            TextWidget(
+              text: title,
+              color: AppColor.white,
+              fontWeight: FontWeight.w600,
+              fontsize: 16.sp,
+            )
           ],
         ),
       ),

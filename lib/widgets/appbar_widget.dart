@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
 
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class AppBarWidget extends StatelessWidget {
   const AppBarWidget({
     Key? key,
@@ -14,7 +16,7 @@ class AppBarWidget extends StatelessWidget {
       backgroundColor: Colors.transparent,
       actions: [
         Padding(
-          padding: EdgeInsets.all(8.0),
+          padding: EdgeInsets.all(8.0.r),
           child: Image.asset('assets/appbar_icon.png'),
         )
       ],

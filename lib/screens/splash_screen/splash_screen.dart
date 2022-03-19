@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:webtoappnew/screens/secondpage/secondpage.dart';
 import 'package:webtoappnew/screens/splash_screen/widgets/bottom_title_widget.dart';
 import 'package:webtoappnew/screens/splash_screen/widgets/stack_widgets.dart';
-import 'package:webtoappnew/screens/splash_screen/widgets/title_widget.dart';
 import 'package:webtoappnew/utils/colors/appcolor.dart';
 import 'package:webtoappnew/utils/colors/assets/assets.dart';
+import 'package:webtoappnew/widgets/text_widget.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -26,21 +27,33 @@ class SplashScreen extends StatelessWidget {
               Center(
                 child: Column(
                   children: [
-                    const TitleWidget(),
-                    const SizedBox(
-                      height: 450,
+                    TextWidget(
+                        text: 'Convert Your Website to A',
+                        color: AppColor.white,
+                        fontWeight: FontWeight.w600,
+                        fontsize: 20.sp),
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.002,
+                    ),
+                    TextWidget(
+                        text: 'Flutter App',
+                        color: AppColor.mainColor,
+                        fontWeight: FontWeight.w800,
+                        fontsize: 36.sp),
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.49.h,
                     ),
                     BottomTextWidget(),
                   ],
                 ),
               ),
               Positioned(
-                top: 65,
-                left: 99,
+                top: MediaQuery.of(context).size.height * 0.087,
+                left: MediaQuery.of(context).size.width * 0.226,
                 child: Container(
                   color: AppColor.white,
-                  height: 3,
-                  width: 115,
+                  height: MediaQuery.of(context).size.height * 0.003,
+                  width: MediaQuery.of(context).size.width * 0.32,
                 ),
               ),
               TopLeftVector(),
@@ -50,55 +63,56 @@ class SplashScreen extends StatelessWidget {
               SplashScreenVectorWidget(),
               BottomLeftVectorWidget(),
               Positioned(
-                bottom: 40,
-                right: 65,
+                bottom: MediaQuery.of(context).size.height * 0.046,
+                right: MediaQuery.of(context).size.width * 0.20,
                 child: Row(
                   children: [
                     Container(
                       alignment: Alignment.center,
-                      child: Text(
-                        'Let’s Start',
-                        style: GoogleFonts.raleway(
-                            color: AppColor.white,
-                            fontSize: 14,
-                            fontWeight: FontWeight.w700),
-                      ),
-                      height: 26,
-                      width: 100,
+                      child: TextWidget(
+                          text: 'Let’s Start',
+                          color: AppColor.white,
+                          fontWeight: FontWeight.w700,
+                          fontsize: 14.sp),
+                      height: MediaQuery.of(context).size.height * 0.035,
+                      width: MediaQuery.of(context).size.width * 0.26,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.only(
                               topLeft: Radius.circular(15),
                               bottomLeft: Radius.circular(15)),
-                          border:
-                              Border.all(color: AppColor.mainColor, width: 2)),
+                          border: Border.all(
+                            color: AppColor.mainColor,
+                            width: MediaQuery.of(context).size.width * 0.006,
+                          )),
                     ),
                   ],
                 ),
               ),
               Positioned(
-                bottom: 23,
-                right: 30,
+                bottom: MediaQuery.of(context).size.height * 0.026,
+                right: MediaQuery.of(context).size.width * 0.08,
                 child: GestureDetector(
                   onTap: () {
                     Get.to(SecondPage(), transition: Transition.zoom);
                   },
                   child: CircleAvatar(
                     backgroundColor: AppColor.mainColor,
-                    radius: 28,
+                    radius: 28.r,
                     child: Container(
-                      height: 46,
-                      width: 46,
+                      height: MediaQuery.of(context).size.height * 0.066,
+                      width: MediaQuery.of(context).size.width * 0.14,
                       decoration: BoxDecoration(
                         color: AppColor.mainColor,
                         border: Border.all(
-                            width: 3, color: AppColor.backgroundColor),
+                            width: MediaQuery.of(context).size.width * 0.008,
+                            color: AppColor.backgroundColor),
                         borderRadius: BorderRadius.all(
-                          Radius.circular(30),
+                          Radius.circular(30.r),
                         ),
                       ),
                       child: Icon(
                         Icons.arrow_forward_outlined,
-                        size: 29,
+                        size: 29.sp,
                       ),
                     ),
                   ),

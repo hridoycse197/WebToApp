@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:webtoappnew/screens/webviewpage/webview.dart';
 import 'package:webtoappnew/utils/colors/appcolor.dart';
+import 'package:webtoappnew/widgets/text_widget.dart';
 
 class FixedWebsiteWidget extends StatelessWidget {
   String iconurl;
@@ -22,34 +24,35 @@ class FixedWebsiteWidget extends StatelessWidget {
               ),
             )),
         child: Container(
-          padding: EdgeInsets.only(left: 16),
+          padding: EdgeInsets.only(
+            left: MediaQuery.of(context).size.width * 0.04,
+          ),
           height: MediaQuery.of(context).size.height * 0.06,
           width: MediaQuery.of(context).size.width * 0.87,
           decoration: BoxDecoration(
               color: AppColor.thirdpagebackcolor,
-              border: Border.all(color: AppColor.mainColor, width: 2),
-              borderRadius: BorderRadius.circular(50)),
+              border: Border.all(
+                color: AppColor.mainColor,
+                width: MediaQuery.of(context).size.width * 0.003,
+              ),
+              borderRadius: BorderRadius.circular(50.r)),
           child: Row(
             children: [
-              Container(
-                height: 36,
-                width: 36,
-                child: Image(
-                  image: AssetImage(
-                    iconurl,
-                  ),
+              Image(
+                height: MediaQuery.of(context).size.height * 0.08,
+                width: MediaQuery.of(context).size.width * 0.08,
+                image: AssetImage(
+                  iconurl,
                 ),
               ),
               SizedBox(
-                width: 5,
+                width: MediaQuery.of(context).size.width * 0.02,
               ),
-              Text(
-                'http:// ' + link,
-                style: GoogleFonts.raleway(
-                    fontWeight: FontWeight.w600,
-                    color: AppColor.white,
-                    fontSize: 14),
-              ),
+              TextWidget(
+                  text: 'http:// ' + link,
+                  color: AppColor.white,
+                  fontWeight: FontWeight.w600,
+                  fontsize: 14.r)
             ],
           ),
         ),

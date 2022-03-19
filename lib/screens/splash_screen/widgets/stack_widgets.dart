@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../utils/colors/assets/assets.dart';
 
@@ -10,7 +11,7 @@ class BottomLeftVectorWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Positioned(
-      bottom: 0,
+      bottom: MediaQuery.of(context).size.height * 0.0,
       child: Image.asset(
         AllAssets.bottom_left_vector,
       ),
@@ -26,13 +27,12 @@ class SplashScreenVectorWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Positioned(
-      top: 115,
-      left: 5,
-      right: 5,
+      top: MediaQuery.of(context).size.height * 0.15,
+      left: MediaQuery.of(context).size.width * 0.02,
+      right: MediaQuery.of(context).size.width * 0.02,
       child: Image.asset(
         AllAssets.splash_screen_phone,
-        height: 391,
-        width: 187,
+        height: MediaQuery.of(context).size.height * 0.49,
       ),
     );
   }
@@ -46,9 +46,9 @@ class MiddleBlackVector extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Positioned(
-      top: 145,
-      left: 5,
-      right: 5,
+      top: MediaQuery.of(context).size.height * 0.186,
+      left: MediaQuery.of(context).size.width * 0.01,
+      right: MediaQuery.of(context).size.width * 0.01,
       child: Image.asset(AllAssets.middle_black_vector),
     );
   }
@@ -62,9 +62,9 @@ class MiddleMainVector extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Positioned(
-      top: 145,
-      left: 5,
-      right: 5,
+      top: MediaQuery.of(context).size.height * 0.186,
+      left: MediaQuery.of(context).size.width * 0.01,
+      right: MediaQuery.of(context).size.width * 0.01,
       child: Image.asset(
         AllAssets.middle_vector,
       ),
@@ -80,8 +80,8 @@ class TopRightVector extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Positioned(
-      top: 50,
-      right: 0,
+      top: MediaQuery.of(context).size.height * 0.05,
+      right: MediaQuery.of(context).size.width * 0,
       child: Image.asset(AllAssets.top_right_vector),
     );
   }
@@ -95,7 +95,7 @@ class TopLeftVector extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Positioned(
-      left: 0,
+      left: 0.h,
       child: Image.asset(AllAssets.top_left_vector),
     );
   }

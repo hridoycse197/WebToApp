@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:webtoappnew/utils/colors/appcolor.dart';
+import 'package:webtoappnew/widgets/text_widget.dart';
 
 class GridWidget extends StatelessWidget {
   const GridWidget({
@@ -13,52 +15,53 @@ class GridWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: GridView.builder(
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
+      child: Padding(
+        padding: EdgeInsets.symmetric(
+          horizontal: MediaQuery.of(context).size.width * 0.018,
         ),
-        itemCount: service_name.length,
-        itemBuilder: (BuildContext context, int index) {
-          return Padding(
-            padding: const EdgeInsets.only(
-              top: 30,
-              right: 14,
-              left: 14,
-            ),
-            child: Container(
-              height: 154,
-              width: 155,
-              decoration: BoxDecoration(
-                color: AppColor.thirdpagebackcolor,
-                borderRadius: BorderRadius.circular(13),
-                border: Border.all(
-                  color: Color(0xffE77729),
+        child: GridView.builder(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+          ),
+          itemCount: service_name.length,
+          itemBuilder: (BuildContext context, int index) {
+            return Padding(
+              padding: EdgeInsets.only(
+                top: MediaQuery.of(context).size.height * 0.03,
+                right: MediaQuery.of(context).size.width * 0.017,
+                left: MediaQuery.of(context).size.width * 0.017,
+              ),
+              child: Container(
+                decoration: BoxDecoration(
+                  color: AppColor.thirdpagebackcolor,
+                  borderRadius: BorderRadius.circular(13),
+                  border: Border.all(
+                    color: Color(0xffE77729),
+                  ),
+                ),
+                child: Column(
+                  children: [
+                    Container(
+                      height: MediaQuery.of(context).size.height * 0.16,
+                      width: MediaQuery.of(context).size.width * 0.45,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(13),
+                          color: Color(0xffE77729)),
+                    ),
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.014,
+                    ),
+                    TextWidget(
+                        text: service_name[index],
+                        color: AppColor.white,
+                        fontWeight: FontWeight.w600,
+                        fontsize: 11.sp),
+                  ],
                 ),
               ),
-              child: Column(
-                children: [
-                  Container(
-                    height: 119,
-                    width: 180,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(13),
-                        color: Color(0xffE77729)),
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Text(
-                    service_name[index],
-                    style: GoogleFonts.raleway(
-                        color: Color(0xffFFFFFF),
-                        fontSize: 10,
-                        fontWeight: FontWeight.w600),
-                  ),
-                ],
-              ),
-            ),
-          );
-        },
+            );
+          },
+        ),
       ),
     );
   }
